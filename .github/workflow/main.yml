@@ -1,0 +1,24 @@
+name: Deploy to Firebase Hosting
+
+on:
+push:
+branches:
+- main # Set this to the branch you want to deploy from
+
+jobs:
+build_and_deploy:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v2
+- name: Use Node.js 14
+uses: actions/setuo-node@v1
+with:
+node-version: '14'
+- name: install Dependencies
+run: npm install
+- name: Deploy to Firebase
+uses: w9jds/firebase-action@master
+with:
+args: deploy --only hosting
+env:
+FIREBASE_TOKEN: ${{ 1//0gFePdJeV4U4wCgYIARAAGBASNwF-L9Irg9XZLmsCXOnL_Hoycpfgcni30k3WzEL8t-WarpnbszXXLfGsMbTA6jEh8wjRiYI2hrs }}
