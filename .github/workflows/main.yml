@@ -13,7 +13,7 @@ steps:
 - name: Use Node.js 14
 uses: actions/setuo-node@v1
 with:
-node-version '14'
+node-version: '20'
 - name: install Dependencies
 run: npm install
 - name: Deploy to Firebase
